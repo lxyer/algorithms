@@ -19,6 +19,11 @@ public class Lambda {
                 .collect(Collectors.joining("❤"));// 连词成句来一下，完美！
         System.out.println(result);
 
+        /**
+         * 无参lambda
+         */
+        new Thread(() -> System.out.println("Hello Lambda!")).start();
+
     }
     public static Boolean isNum( String str ) {
         for( int i=0; i<str.length(); i++ ) {
