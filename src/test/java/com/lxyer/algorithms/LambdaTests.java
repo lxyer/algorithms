@@ -1,4 +1,5 @@
 package com.lxyer.algorithms;
+import java.util.function.Consumer;
 import	java.util.stream.Collectors;
 import java.util.Set;
 import	java.util.function.Supplier;
@@ -56,6 +57,13 @@ public class LambdaTests {
         //添加元素
         List<Integer> list1 = new ArrayList<>();
         list.stream().filter(i -> list1.add(i));
+
+
+        Consumer c = System.out::println;
+        c.accept("Good");
+        c.accept("World");
+        //连续打印3次
+        c.andThen(c).andThen(c).accept("Good");
     }
     /**
      * 断言/条件测试，定义一个抽象方法，必定有1个入参，返回值boolean。
