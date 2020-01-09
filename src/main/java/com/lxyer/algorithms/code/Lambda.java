@@ -19,7 +19,6 @@ public class Lambda {
                 .collect(Collectors.joining("❤"));// 连词成句来一下，完美！
         System.out.println(result);
 
-
     }
     public static Boolean isNum( String str ) {
         for( int i=0; i<str.length(); i++ ) {
