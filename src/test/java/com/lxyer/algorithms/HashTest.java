@@ -16,7 +16,7 @@ public class HashTest {
     @Test
     public void hashCodeTest() {
         Coder coder = new Coder("lxyer", 22);
-        Coder coder1 = new Coder("lxyer1", 221);
+        Coder coder1 = new Coder("lxyer", 221);
         Coder coder2 = new Coder();
         coder2.setAge(222);
         coder2.setName("lxyer");
@@ -46,17 +46,17 @@ public class HashTest {
 
         @Override
         public boolean equals(Object o) {
-            if (o==null) {
+            if (o == null) {
                 return false;
             }
-            if (o==this) {
+            if (o == this) {
                 return true;
             }
-            if (o.getClass()!=this.getClass()) {
+            if (o.getClass() != this.getClass()) {
                 return false;
             }
             Coder other = (Coder) o;
-            if (other.getName()==this.getName()) {
+            if (other.getName() == this.getName()) {
                 return true;
             }
             return false;
@@ -64,8 +64,9 @@ public class HashTest {
 
         @Override
         public int hashCode() {
+            //hash使用素数
             int hash = 17;
-            return hash*31+getName().hashCode();
+            return hash * 31 + getName().hashCode();
         }
     }
 }
